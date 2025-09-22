@@ -146,8 +146,11 @@ def create_study_hours_gpa_scatter(df):
     df['Study_Hours_Per_Day'] = pd.to_numeric(df['Study_Hours_Per_Day'], errors='coerce')
     df['GPA'] = pd.to_numeric(df['GPA'], errors='coerce')
     
+    # Remove rows with NaN values
+    df_clean = df.dropna(subset=['Study_Hours_Per_Day', 'GPA'])
+    
     fig = px.scatter(
-        df,
+        df_clean,
         x='Study_Hours_Per_Day',
         y='GPA',
         color='Stress_Level',
@@ -156,9 +159,20 @@ def create_study_hours_gpa_scatter(df):
             'Low': '#10b981',
             'Moderate': '#f59e0b', 
             'High': '#ef4444'
-        },
-        trendline="ols"
+        }
+        # REMOVED: trendline="ols" - this was causing the ModuleNotFoundError
     )
+    
+    # Add manual trend line using numpy
+    if len(df_clean) > 1:
+        z = np.polyfit(df_clean['Study_Hours_Per_Day'], df_clean['GPA'], 1)
+        p = np.poly1d(z)
+        x_trend = np.linspace(df_clean['Study_Hours_Per_Day'].min(), 
+                             df_clean['Study_Hours_Per_Day'].max(), 100)
+        fig.add_scatter(x=x_trend, y=p(x_trend),
+                       mode='lines', name='Trend Line', 
+                       line=dict(color='black', dash='dash'))
+    
     fig.update_layout(height=400)
     return fig
 
@@ -433,29 +447,6 @@ def main():
         </ul>
         </div>
         """, unsafe_allow_html=True)
-        
-        # General Resources
-        st.markdown('<h3>🆘 Mental Health Resources</h3>', unsafe_allow_html=True)
-        
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            st.markdown("""
-            **Campus Resources:**
-            - Student Counseling Center
-            - Academic Success Center
-            - Peer Support Groups
-            - Mental Health First Aid
-            """)
-        
-        with col2:
-            st.markdown("""
-            **Emergency Contacts:**
-            - Campus Crisis Hotline: 24/7
-            - National Suicide Prevention: 988
-            - Crisis Text Line: Text HOME to 741741
-            - Campus Security: Emergency line
-            """)
 
 if __name__ == "__main__":
     main()
