@@ -309,6 +309,41 @@ def main():
         fig3 = create_correlation_heatmap(df)
         st.plotly_chart(fig3, use_container_width=True)
         
+        st.markdown("""
+        <div class="insight-box">
+        <h4>🎯 How to Read the Correlation Heatmap</h4>
+        <p><strong>Color Guide:</strong></p>
+        <ul>
+            <li><strong>Red colors (positive values):</strong> Variables increase together</li>
+            <li><strong>Blue colors (negative values):</strong> One variable increases while the other decreases</li>
+            <li><strong>White/neutral colors (near 0):</strong> Little to no relationship between variables</li>
+        </ul>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown("""
+        <div class="insight-box">
+        <h4>📊 Key Correlation Insights</h4>
+        <ul>
+            <li><strong>Study Hours ↔ GPA (0.73):</strong> Strong positive correlation - more study time significantly improves academic performance</li>
+            <li><strong>Physical Activity ↔ Study Hours (-0.49):</strong> Moderate negative correlation - students who study more tend to exercise less</li>
+            <li><strong>Physical Activity ↔ GPA (-0.34):</strong> Moderate negative correlation - higher GPA students tend to have less physical activity time</li>
+            <li><strong>Sleep ↔ Social Hours (-0.19):</strong> Weak negative correlation - more social time slightly reduces sleep</li>
+            <li><strong>Study ↔ Social Hours (-0.14):</strong> Weak negative correlation - academic focus slightly reduces social time</li>
+        </ul>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown("""
+        <div class="insight-box">
+        <h4>⚖️ The Academic-Wellness Trade-off</h4>
+        <p>The heatmap reveals a critical insight: <strong>academic success often comes at the cost of physical wellness</strong>. 
+        Students who achieve higher GPAs through increased study hours tend to sacrifice physical activity time. 
+        This creates a challenging balance between academic achievement and physical health, which may contribute to stress levels.</p>
+        <p><strong>Recommendation:</strong> Students should aim for structured time management that includes dedicated slots for both academic work and physical activity to maintain optimal mental health.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
         # Study hours vs GPA
         st.markdown('<h3>📚 Study Hours vs Academic Performance</h3>', unsafe_allow_html=True)
         fig4 = create_study_hours_gpa_scatter(df)
