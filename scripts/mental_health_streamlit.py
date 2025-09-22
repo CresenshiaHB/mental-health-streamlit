@@ -13,7 +13,6 @@ import matplotlib.pyplot as plt
 # Page configuration
 st.set_page_config(
     page_title="Mental Health & Stress Prediction Dashboard",
-    page_icon="🧠",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -190,7 +189,7 @@ def predict_stress_level(study_hours, extracurricular_hours, sleep_hours,
 
 def main():
     # Header
-    st.markdown('<h1 class="main-header">🧠 Mental Health & Stress Prediction Dashboard</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header"> Mental Health & Stress Prediction Dashboard</h1>', unsafe_allow_html=True)
     
     # Load data
     df = load_data()
@@ -252,12 +251,11 @@ def main():
         
         st.markdown("""
         <div class="insight-box">
-        <h4>🌟 Key Mental Health Statistics</h4>
+        <h4>Key Mental Health Statistics</h4>
         <ul>
-            <li><strong>60%</strong> of college students report overwhelming anxiety</li>
-            <li><strong>40%</strong> experience significant depression symptoms</li>
-            <li><strong>85%</strong> feel emotionally exhausted from academic pressure</li>
-            <li><strong>73%</strong> have experienced mental health crises on campus</li>
+            <li><strong>Over 51%</strong> of students in this dataset report high levels of stress</li>
+            <li><strong>Approximately 85%</strong> of students experience moderate to high levels of stress</li>
+            <li><strong>Only 1 in 7</strong> students (around 15%) feel their stress level is low</li>
         </ul>
         </div>
         """, unsafe_allow_html=True)
