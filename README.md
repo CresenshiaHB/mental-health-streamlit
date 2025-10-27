@@ -10,17 +10,16 @@ This application is built using a **Random Forest model** from Scikit-learn and 
 
 1. Access the deployed dashboard here:
 https://nova-mental-health.streamlit.app
-
 (Note: The app may be in the sleep mode.)
 
 2. Access the full PDF documentation here:
-`Docummentation.pdf` [https://github.com/CresenshiaHB/mental-health-streamlit/blob/main/Docummentation.pdf]
+https://github.com/CresenshiaHB/mental-health-streamlit/blob/main/Docummentation.pdf
 
 ---
 
 ## 📊 Dataset Overview
 
-* **Source:** [Student Lifestyle Dataset (Kaggle)]([https://www.kaggle.com/datasets/steve1215rogg/student-lifestyle-dataset])
+* **Source:** [Student Lifestyle Dataset (Kaggle)][https://www.kaggle.com/datasets/steve1215rogg/student-lifestyle-dataset]
 * **Target Variable:** Stress_Level (Categorical: 0 [Low], 1 [Moderate], 2 [High])
 * **Key Features Used:**
 
