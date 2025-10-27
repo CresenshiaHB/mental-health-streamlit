@@ -19,7 +19,7 @@ https://github.com/CresenshiaHB/mental-health-streamlit/blob/main/Docummentation
 
 ## 📊 Dataset Overview
 
-* **Source:** [Student Lifestyle Dataset (Kaggle)]([https://www.kaggle.com/datasets/steve1215rogg/student-lifestyle-dataset])
+* **Source:** [Student Lifestyle Dataset (Kaggle)](https://www.kaggle.com/datasets/steve1215rogg/student-lifestyle-dataset)
 * **Target Variable:** Stress_Level (Categorical: 0 [Low], 1 [Moderate], 2 [High])
 * **Key Features Used:**
 
