@@ -1,4 +1,4 @@
-# 🧠 Student Stress Level Prediction Application
+# Student Stress Level Prediction Application
 
 This is an end-to-end machine learning project that predicts a student's stress level based on academic and personal factors. The goal is to identify stress triggers and provide an interactive application for real-time predictions.
 
